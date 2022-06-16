@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Kategori</th>
+      <th scope="col">İngilizce</th>
+        <th></th>
+      <th scope="col">Türkçe</th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for i in result %}
+
+    <tr>
+      <th scope="row">{{ sayi.index(i) + 1}}</th>
+      <td>{{ i["kategor"] }}</td>
+      <td>{{ i["english"] }}  </td>
+        <td>-</td>
+      <td>{{ i["turkish"] }}</td>
+        <td><a class="btn btn-warning" href="/edit">Düzenle</a></td>
+        <td><a class="btn btn-danger" href="/delete/{{ i["id"] }}">Sil</a></td>
+    </tr>
+
+   {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

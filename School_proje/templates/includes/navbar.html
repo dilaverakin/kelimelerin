@@ -1,0 +1,140 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/"><h4>School</h4></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {% block isim %}
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        {% if session["logged_in"] %}
+        <ul class="navbar-nav mr-auto">
+             <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dersler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Beginner</a>
+          <a class="dropdown-item" href="#">Elementary</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Pre-Intermediate</a>
+          <a class="dropdown-item" href="#">Intermediate</a>
+          <a class="dropdown-item" href="#">Upper Intermediate</a>
+          <a class="dropdown-item" href="#">Advanced</a>
+        </div>
+      </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sınavlar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Beginner</a>
+          <a class="dropdown-item" href="#">Elementary</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Pre-Intermediate</a>
+          <a class="dropdown-item" href="#">Intermediate</a>
+          <a class="dropdown-item" href="#">Upper Intermediate</a>
+          <a class="dropdown-item" href="#">Advanced</a>
+        </div>
+      </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Kelimeler
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/words">Bütün Kelimeler</a>
+                    <a class="dropdown-item" href="#">Meyve</a>
+                    <a class="dropdown-item" href="#">oyuncaklar</a>
+                    <a class="dropdown-item" href="#">EV eşyaları</a>
+                    <a class="dropdown-item" href="#">Günlük</a>
+                    <a class="dropdown-item" href="#">Fiiller</a>
+                    <a class="dropdown-item" href="#">İsim</a>
+                    <a class="dropdown-item" href="#">Hayvan</a>
+                </div>
+
+            </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Makaleler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Bilim</a>
+          <a class="dropdown-item" href="#">Teknoloji</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Hayvanlar</a>
+          <a class="dropdown-item" href="#">Doğa</a>
+          <a class="dropdown-item" href="#">Spor</a>
+          <a class="dropdown-item" href="#">Uzay</a>
+        </div>
+      </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Kelime Oyunları
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/randint">Rastgele</a>
+          <a class="dropdown-item" href="/by-order">Alfabetik Sıra</a>
+          <a class="dropdown-item" href="/category">Kategori</a>
+        </div>
+            </li >
+            <li class="nav-item">
+          <a class="nav-link" href="/add">Kelime Ekle</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/online">Canlı Ders</a>
+        </li>
+        </ul>
+
+
+
+            <ul class = "navbar-nav ml-outo">
+            <li class="nav-item dropdown">
+
+                   <li class="nav-item dropdown">
+        <a  class="btn btn-warning dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ session["kullanıcı"] }}
+        </a>
+        <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">profil</a>
+          <a class="dropdown-item" href="#">Hesap bilgileri</a>
+            <a class="dropdown-item" href="#">Sınav Bilgileri</a>
+            <a class="dropdown-item" href="#">İlerleme</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">Çıkış Yap</a>
+
+        </div>
+
+      </li>
+                    <ul class="navbar-nav ml-outo">
+                <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+
+
+        </ul>
+
+                 {% else %}
+                    <ul class = "navbar-nav ml-outo ">
+                                <li class="nav-item active ">
+
+                    <a class="btn " href="/login">Giriş Yap</a>
+
+                    <a class="btn" href="/register">Kayıt ol</a>
+                                </li>
+                    </ul>
+
+                {% endif %}
+
+
+            </li>
+
+        </ul>
+
+        {% endblock %}
+
+
+    </div>
+</nav>
+

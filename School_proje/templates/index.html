@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+       {% from "includes/formhelpers.html" import render_field %}
+    <form  method="post">
+    {% if session["ekle"] %}
+        <div class="row">
+  <div class="col" align="center">
+      {{ render_field(form.enlgish,class = "form-control") }}
+  </div>
+
+  <div class="col" align="center">
+      {{ render_field(form.Turkish,class="form-control") }}
+  </div>
+            <div class="col" align="center">
+      {{ render_field(form.kategori,class="form-control") }}
+  </div>
+
+
+</div>
+        <br><div align="center"><button type="submit" class="btn btn-primary">Ekle</button>
+         </div>
+        <br><br>
+    {% endif %}
+{% if session["degistir"] %}
+    {% if session["change"]%}
+        <div class="row">
+  <div class="col" align="center">
+          <div><h6>Türkçe</h6></div>
+      <div class="btn btn-warning form-control"><h5>{{ t_kelime}}</h5></div>
+  </div>
+           <div><br><button  type="submit" class="btn btn-primary"><a href="/change" style="color: white"><--<br>--></a></button></div>
+            <div class="col" align="center">
+      İngilizce : <input type="text" name="ingilizce" class="form-control">
+  </div>
+
+
+</div>
+
+       <div align="center"><br><button  type="submit" class="btn btn-primary">Kontrol Et</button></div>
+
+        <br><br>
+    {% else %}
+
+       <div class="row">
+  <div class="col" align="center">
+          <div><h6>İngilizce</h6></div>
+      <div class="btn btn-warning form-control"><h5>{{ i_kelime}}</h5></div>
+  </div>
+           <div><br><button  type="submit" class="btn btn-primary"><a href="/change" style="color: white"><--<br>--></a></button></div>
+            <div class="col" align="center">
+      Türkçe : <input type="text" name="Turkce" class="form-control">
+  </div>
+
+
+</div>
+
+       <div align="center"><br><button  type="submit" class="btn btn-primary">Kontrol Et</button></div>
+
+        <br><br>
+
+{% endif %}
+    {% endif %}
+</form>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+                <img class="d-block w-100" src="https://st2.depositphotos.com/3837271/8400/i/950/depositphotos_84003638-stock-photo-do-you-speak-english.jpg" alt="Third slide">
+
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://st3.depositphotos.com/1350793/12590/i/950/depositphotos_125909396-stock-photo-english-concept-with-woman.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+            <img class="d-block w-100" src="https://www.indyturk.com/sites/default/files/styles/1368x911/public/article/main_image/2019/10/24/194256-82855996.jpg?itok=M0Tbg-Ju" alt="First slide">
+
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    <br>
+    <main>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing ">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="rounded-circle " src="http://www.woohoobox.com/Uploads/UrunResimleri/buyuk/oxford-dictionary-masa-organizerikirta-afc1-b.jpg" alt="" width="120" height="110">
+        <h2>Dictionary</h2>
+        <p><b><i>learn more</i></b></p>
+        <p><a class="btn btn-warning" href="#">click</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+          <img class="rounded-circle " src="https://image.shutterstock.com/image-photo/blackboard-background-written-colorful-chalk-260nw-1166166529.jpg" alt="" width="120" height="110">
+
+        <h2>Grammar</h2>
+          <p><b><i>learn more</i></b></p>
+        <p><a class="btn btn-warning" href="#">click</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="rounded-circle " src="https://hasortaokul.meb.k12.tr/meb_iys_dosyalar/77/02/715511/resimler/2017_12/k_05091633_etkiliderscalisma.jpg" alt="" width="120" height="110">
+        <h2>Thesaurus</h2>
+          <p><b><i>learn more</i></b></p>
+        <p><a class="btn btn-warning" href="#">click</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"><span class="text-muted">Yazarak çalışma bölümü </span></h2>
+        <p class="lead">Öğrenciler yazarak çalışarak ders notları içinden önemli olan bölümleri sadeleştirip, daha kısa notlar haline gelmesini sağlıyor. Bu hem bilgi kalabalığını önlüyor hem de en önemli kısımlar kalıcı olarak akılda kalıyor. Ayrıca yazarak çalışmak yaratıcılığı da olumlu anlamda etkiliyor.</p>
+      </div>
+      <div class="col-md-5">
+          <img src="https://cf.kizlarsoruyor.com/a140148/df32df93-877b-4185-b4cb-c74120290d46-m.jpg" title="Yazarak çalış" >
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><span class="text-muted">Konuşarak Çalış</span></h2>
+        <p class="lead">Herkes farklıdır, yani herkes farklı şekilde öğrenir. Ders çalışırken klasik müzik, sıcak, kızarmış bir oda ve bir fincan çaya ihtiyacınız olabilir. Bir başkası tam bir sessizlik, soğuk bir oda ve hiç atıştırmalık gerektirmeyebilir. Tek başına çalışmak, mükemmel çalışma ortamını oluşturmanıza olanak tanır, böylece çalışmadan en iyi şekilde yararlanabilirsiniz.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+          <img src="https://www.ent.com.tr/m/r/menu/ses-ve-konusma-terapisi-unitesi.jpg" title="Konuşarak Çalış">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"><span class="text-muted"> Pratik yap </span></h2>
+        <p class="lead">Bilgileri daha uzun süreli hatırlayabilirsin. Başlangıçta zor görünen ya da uzun zaman gerektiren işlerini düşündüğünden daha kısa sürede bitirebilir ve hedeflerine daha kısa sürede ulaşabilirsin</p>
+      </div>
+      <div class="col-md-5">
+          <img src="https://www.edebiyatdunyamiz.com/images/Makaleler/konusma.png" title="Pratik Yap">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">bilgilendirme</a></p>
+    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">hakkımızda</a> &middot; <a href="#">adres</a></p>
+  </footer>
+</main>
+
+
+
+
+
+{% endblock body %}
